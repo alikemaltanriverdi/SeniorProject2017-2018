@@ -1,0 +1,4 @@
+sudo virtualenv FileMods
+sudo pip install mysql-connector
+source FileMods/bin/activate
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/alitanriverdi/PycharmProjects/FileMods/credentials.json
