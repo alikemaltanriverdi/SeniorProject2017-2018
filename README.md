@@ -12,7 +12,7 @@ Copy the Google Drive path to filepathfinder.py
 
 4- Valentina Studio -> Create Server 
 
-5-  Create a database called "alikemal"
+5-  Create a database called "csiresume"
 
 6- Load the dump database (that will be provided by us) from Downloads .SQL.
 
