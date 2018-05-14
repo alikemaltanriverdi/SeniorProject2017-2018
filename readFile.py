@@ -4,7 +4,7 @@ from mysql.connector import errorcode
 print(mysql)
 
 try:
-    cnn = mysql.connector.connect(user='seniorProject', password='seniorProject', host='127.0.0.1',database='alikemal')
+    cnn = mysql.connector.connect(user='admin', password='admin', host='127.0.0.1',database='csiresume')
     print("It works!")
 except mysql.connector.Error as e:
     if e.errno == errorcode.ER_ACCESS_DENIED_ERROR:

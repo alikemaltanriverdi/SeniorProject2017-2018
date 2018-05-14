@@ -16,7 +16,7 @@ sys.setdefaultencoding('UTF8')
 #Connects to the database
 def dataBaseConnectionEstablish(database):
     try:
-        databaseObj = mysql.connector.connect(user='seniorProject', password='seniorProject', host='127.0.0.1', database=database)
+        databaseObj = mysql.connector.connect(user='admin', password='admin', host='127.0.0.1', database=database)
         print "Connection Worked"
         return databaseObj
     except mysql.connector.Error as e:

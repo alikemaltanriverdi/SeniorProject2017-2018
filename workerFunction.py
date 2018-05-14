@@ -34,12 +34,12 @@ class Worker():
         goodWords = [] #Holds the array of good words for grading
 
          #Calls badWordsSelection method of the databaseConnection Module
-        database.badWordsSelection('alikemal', badWords)
+        database.badWordsSelection('csiresume', badWords)
 
         #Calls goodWordsSelection method of the databaseConnection Module
-        database.goodWordsSelection('alikemal', goodWords)
+        database.goodWordsSelection('csiresume', goodWords)
 
-        database.resumeSelectionOfDatabase('alikemal',resumesArr)
+        database.resumeSelectionOfDatabase('csiresume',resumesArr)
 
         for i in range(0, len(resumesArr)):
             resSelect.resumeSelection(resumesArr[i], resumesArr[i].getResumeText()  , badWords, goodWords)
@@ -59,8 +59,8 @@ class Worker():
             else:
                 print ("Could not find")
 
-        database.dataBaseInsertion("alikemal", topResumes, "Accepted")
-        database.dataBaseInsertion("alikemal", declinedResumes, "Declined")
+        database.dataBaseInsertion("csiresume", topResumes, "Accepted")
+        database.dataBaseInsertion("csiresume", declinedResumes, "Declined")
 
         # print("\nAccepted Resumes:")
         # for i in range(0,len(acceptedResumes)):
