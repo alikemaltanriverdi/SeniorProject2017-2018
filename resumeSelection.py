@@ -26,6 +26,9 @@ def resumeSelection(resObj, personName, badWordsArray, goodWordsArray):
                         grader.Grading(resObj, "dec")
                         resObj.reason.append(badWordsArray[j])
                         break
+                    elif ((str(array[i]).lower()).find("college") != -1):
+                        grader.Grading(resObj, "dec")
+                        break
 
             for j in range(0, len(goodWordsArray)):
                 if(goodWordsArray[j]=="" or goodWordsArray[j] == " " or goodWordsArray[j]=="\\" or goodWordsArray[j]=="/" or goodWordsArray[j]=="" or goodWordsArray[j]== ","):
@@ -34,6 +37,9 @@ def resumeSelection(resObj, personName, badWordsArray, goodWordsArray):
                     if ((str(array[i]).lower()).find(str(goodWordsArray[j]).lower()) != -1):
                         grader.Grading(resObj, "inc")
                         resObj.reason.append(goodWordsArray[j])
+                        break
+                    elif ((str(array[i]).lower()).find("university") != -1):
+                        grader.Grading(resObj, "inc")
                         break
 
             if(str(array[i]).lower().find("eagle scout")==-1):

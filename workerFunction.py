@@ -84,3 +84,16 @@ class Worker():
         self.accepted = sorted(acceptedResumes, key=lambda x: x.grade(), reverse=True)
         self.waiting = sorted(resumesOnTheWaitingList, key=lambda x: x.grade(), reverse=True)
         self.declined = sorted(declinedResumes, key=lambda x: x.grade(), reverse=True)
+        
+        f = open('C:\\Users\\yalva\\Desktop\\sync\\Results.txt','w')
+        tt = "--ACCEPTED RESUMES--\n\n"
+        for i in range(0,len(self.accepted)):
+            tt = tt + "ID:  " + self.accepted[i].name() + "\nGrade:  " + str(self.accepted[i].grade()) + "\nReason:  " + str(self.accepted[i].reason).replace('[','').replace(']','').replace("'","") + "\n\n"
+        tt = tt + "--WAITING RESUMES--\n\n"
+        for i in range(0,len(self.waiting)):
+            tt = tt + "ID:  " + self.waiting[i].name() + "\nGrade:  " + str(self.waiting[i].grade()) + "\nReason:  " + str(self.waiting[i].reason).replace('[','').replace(']','').replace("'","") + "\n\n"
+        tt = tt + "--DECLINED RESUMES--\n\n"
+        for i in range(0,len(self.declined)):
+            tt = tt + "ID:  " + self.declined[i].name() + "\nGrade:  " + str(self.declined[i].grade()) + "\nReason:  " + str(self.declined[i].reason).replace('[','').replace(']','').replace("'","") + "\n\n"
+        f.write(tt)
+        f.close()

@@ -11,5 +11,3 @@ for distro in distros_dict:
     if(distro['name']!="United States of America"):
         # nStr ="" ++ " "
         newStr.append(str(distro['name']))
-    else:
-        print ("Found USA")

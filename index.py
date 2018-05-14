@@ -9,10 +9,10 @@ def work():
     try:
         cnn = mysql.connector.connect(user='admin', password='admin', host='127.0.0.1',
                                       database='csiresume')
-        print("It works!")
+        #print("It works!")
     except mysql.connector.Error as e:
         if e.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Sth is wrong with username or pw")
+            print("Username or password authentication problem")
         elif e.errno == errorcode.ER_BAD_DB_ERROR:
             print("DB does not exist")
         else:

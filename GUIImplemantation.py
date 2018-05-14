@@ -15,7 +15,7 @@ def insertionToListElement(listElement,resumeID):
         newStr = ""
         resumeID[i].reason = sorted(set(resumeID[i].reason))
         if (len(resumeID[i].reason)==1):
-            listElement.insert(tk.END, str(resumeID[i].grade()) + "\t" + str(resumeID[i].name())+ "\tReason:"+str(resumeID[i].reason[0]))
+            listElement.insert(tk.END, "ID:  " + str(resumeID[i].name()), "Grade:  " + str(resumeID[i].grade()), "Reason:  "  + str(resumeID[i].reason[0]) , " ")
         else:
             for j in range(0, len(resumeID[i].reason)):
                 if(j==len(resumeID[i].reason)-1):
@@ -25,7 +25,7 @@ def insertionToListElement(listElement,resumeID):
                     newStr = newStr + resumeID[i].reason[j]+","
                     # print "NewString:" + newStr
 
-            listElement.insert(tk.END,str(resumeID[i].grade()) + "\t" + str(resumeID[i].name())+ "\tReason:" + str(newStr))
+            listElement.insert(tk.END, "ID:  " + str(resumeID[i].name()), "Grade:  " + str(resumeID[i].grade()), "Reason:  " + str(newStr) , " ")
 
 
 #Creates listboxes to keep data in it
@@ -33,21 +33,21 @@ def GUIMethod(goal,declinedResumes,acceptedResumes,resumesOnTheWaitingList):
     if(len(acceptedResumes)>0):
         acceptanceLabel = tk.Label(goal,text="Accepted")
         acceptanceLabel.grid(row=1,column=0)
-        Lb2 = tk.Listbox(goal,height=len(acceptedResumes),width=len(acceptedResumes),bg="green")
+        Lb2 = tk.Listbox(goal,height=len(acceptedResumes),width=len(acceptedResumes),bg="green3")
         Lb2.grid(row=1,column=1)
         acceptanceLabel.pack(fill=BOTH)
         Lb2.pack(fill=BOTH, expand=1)
     if(len(resumesOnTheWaitingList)>0):
         waitLabel = tk.Label(goal,text= "Waiting")
         waitLabel.grid(row=1,column=0)
-        Lb3 = tk.Listbox(goal,height=len(resumesOnTheWaitingList),width=len(resumesOnTheWaitingList),bg="yellow")
+        Lb3 = tk.Listbox(goal,height=len(resumesOnTheWaitingList),width=len(resumesOnTheWaitingList),bg="yellow3")
         Lb3.grid(row=3,column=3)
         waitLabel.pack(fill=BOTH)
         Lb3.pack(fill=BOTH, expand=1)
     if (len(declinedResumes) > 0):
         ali = tk.Label(goal, text="Declined")
         # ali.columnconfigure(0, weight=3)
-        Lb1 = tk.Listbox(goal,width=50,height=len(declinedResumes),bg="red")
+        Lb1 = tk.Listbox(goal,width=50,height=len(declinedResumes),bg="red3")
         Lb1.grid(row=0, column=0)
         ali.pack(fill=BOTH)
         Lb1.pack(fill=BOTH, expand=1)

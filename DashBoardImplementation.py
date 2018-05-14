@@ -22,10 +22,7 @@ worker = works.Worker()
 
 #Temporary user names for login
 usersOfApp = {
-    "Ali":"Kemal",
-    "Merwyn":"Jones",
-    "Yalvac":"Top",
-    "Elcin":"Can"
+    "Dave":"Jones"
 }
 
 #Initialize main Dasboard to run other dashboards
@@ -95,9 +92,9 @@ class PageOne(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        self.button2 = tk.Button(self, text="Refresh", command=lambda: self.refreshElements(),bg="blue")
+        self.button2 = tk.Button(self, text="Refresh", command=lambda: self.refreshElements(),bg="sky blue")
         self.button2.pack(side="top",fill=X,padx=0,pady=0)
-        self.button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage),bg="blue")
+        self.button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage),bg="sky blue")
         self.button1.pack(side="bottom",fill=X)
         gui.GUIMethod(self, worker.declined, worker.accepted, worker.waiting)
 

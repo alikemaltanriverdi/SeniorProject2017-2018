@@ -8,7 +8,7 @@
 #Finds the files to be process in the given folder
 import glob, os
 def filePathFinder(resumes):
-    pathOfTheDirectory = "/Users/alitanriverdi/GoogleDrive/yalvac/"
+    pathOfTheDirectory = "C:\\Users\\yalva\\Desktop\\sync\\"
     os.chdir(pathOfTheDirectory)  # Sets file path
 
     #For jgp extensions
@@ -26,8 +26,8 @@ def filePathFinder(resumes):
             (resumes).append(pathOfTheDirectory+str(file))  # Adds Files into Resume Array
 
     #For .pdf extensions
-    for file in glob.glob("*.pdf"):
-        if ((file == "goodWords.txt") or file == "badWords.txt"):
-            continue
-        else:
-            (resumes).append(pathOfTheDirectory+str(file))  # Adds Files into Resume Array
+    #for file in glob.glob("*.pdf"):
+    #    if ((file == "goodWords.txt") or file == "badWords.txt"):
+    #        continue
+    #    else:
+    #        (resumes).append(pathOfTheDirectory+str(file))  # Adds Files into Resume Array

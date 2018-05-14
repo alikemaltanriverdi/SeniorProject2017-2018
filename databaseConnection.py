@@ -17,7 +17,7 @@ sys.setdefaultencoding('UTF8')
 def dataBaseConnectionEstablish(database):
     try:
         databaseObj = mysql.connector.connect(user='admin', password='admin', host='127.0.0.1', database=database)
-        print "Connection Worked"
+        #print "Connection Worked"
         return databaseObj
     except mysql.connector.Error as e:
         if e.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -40,14 +40,14 @@ def dataBaseInsertion(database, array, acceptionType):
         connectionObj.commit()
         cursor.close()
         connectionObj.close()
-        print "Accepted worked"
+        #print "Accepted worked"
     elif(acceptionType == "Declined"):
         cursor = connectionObj.cursor()
         declinedResumesInsertion(cursor,array)
         connectionObj.commit()
         cursor.close()
         connectionObj.close()
-        print "Declined worked"
+        #print "Declined worked"
     else:
         print "Could not find the right type! Closing the connection..."
         connectionObj.close()
@@ -62,7 +62,7 @@ def declinedResumesInsertion(obj,dArray):
         except mysql.connector.IntegrityError:
             query = "UPDATE DeclinedResumes SET Reason = %s WHERE Name= %s"
             obj.execute(query,(str(dArray[i].reason).replace("[", "").replace("]", "").replace("'", ""), str(dArray[i].name())))
-            print("Daha da giris")
+            #print("Daha da giris")
             continue
             # print "Could not execute for declined resumes"
 
@@ -74,7 +74,7 @@ def emplooyesInsertion(obj, eArray):
         except mysql.connector.IntegrityError:
             query = "UPDATE AcceptedResumes SET Grade = %s, Reason = %s WHERE Name= %s"
             obj.execute(query, (str(eArray[i].grade()),str(eArray[i].reason).replace("[", "").replace("]", "").replace("'", ""),str(eArray[i].name())))
-            print("Daha fazla da giris")
+            #print("Daha fazla da giris")
             continue
 
 def badWordsSelection(database, array):
